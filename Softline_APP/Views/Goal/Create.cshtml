@@ -1,0 +1,51 @@
+﻿@using System.Net.Http
+@using Newtonsoft.Json
+@using Softline_API.Controllers.Models
+@model Softline_API.Controllers.Models.GoalVM
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Create your goal</h1>
+
+<div class="row form-box">
+    <form asp-action="Create">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="form-group">
+            <div class="input-group mb-3">
+                <label asp-for="Name" class="input-group-text col-md-3 form-input-desc"></label>
+                <input asp-for="Name" class="form-control"  />
+                <span asp-validation-for="Name" class="text-danger col-md-12"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="input-group mb-3">
+                <label asp-for="Description" class="input-group-text col-md-12 form-input-desc"></label>
+                <textarea asp-for ="Description" class="form-control form-text-area" multiple></textarea>
+                <span asp-validation-for="Description" class="text-danger  col-md-12"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="input-group mb-3">
+                <label asp-for="Status.Status_name" class="input-group-text col-md-3 form-input-desc"></label>
+                <select asp-for="Status_ID" class="form-select form-control" id="inputGroupSelect02">
+                    <option selected>Choose...</option>
+                        @foreach (var status in Model.Statuses)
+                        {
+                            <option value="@status.Status_ID">@status.Status_name</option>
+                        }
+                </select>
+                <span asp-validation-for="Status" class="text-danger col-md-12"></span>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <input type="submit" value="Добавить" class="btn control-btn create-btn submit-create-button" />
+            <a asp-action="Index" class="btn delete-btn control-btn submit-create-button">Отмена</a>
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

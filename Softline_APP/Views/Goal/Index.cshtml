@@ -1,0 +1,79 @@
+﻿@model IEnumerable<Softline_API.Controllers.Models.GoalVM>
+
+@{
+    ViewData["Title"] = "Goals";
+}
+
+<ul class="nav nav-fill control-group">
+    <li class="nav-item">
+        <a asp-action="Create" class="nav-link create-btn control-btn">Добавить</a>
+    </li>
+    <li class="nav-item">
+        <a id="edit" class="nav-link edit-btn control-btn">Редактировать</a>
+    </li>
+    <li class="nav-item">
+        <a id="delete" class="nav-link delete-btn control-btn">Удалить</a>
+    </li>
+</ul>
+
+<div class="table-box">
+    <table class="table">
+        <thead class="tab-head">
+            <tr>
+                <th hidden>
+                    <label asp-for="@Model.FirstOrDefault().ID"></label>
+                </th>
+                <th>
+                    <label asp-for="@Model.FirstOrDefault().Name"></label>
+                </th>
+                <th>
+                    <label asp-for="@Model.FirstOrDefault().Description"></label>
+                </th>
+                <th>
+                    <label asp-for="@Model.FirstOrDefault().Status.Status_name"></label>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr class="record">
+                    <td hidden>
+                        <label class="record_id">@item.ID</label>
+                    </td>
+                    <td>
+                        <label>@item.Name</label>
+                    </td>
+                    <td>
+                        <label>@item.Description</label>
+                    </td>
+                    <td>
+                        <label>@item.Status.Status_name</label>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+</div>
+
+<div class="modal fade" id="record_not_set_modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Запись не выбрана</h5>
+            </div>
+            <div class="modal-body">
+                Выберите запись
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="modal-close-btn" class="btn delete-btn control-btn" data-bs-dismiss="modal">Закрыть</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts
+{
+    <script src="~/wwwroot/js/site.js"></script>
+}

@@ -1,0 +1,61 @@
+﻿@using System.Net.Http
+@using Newtonsoft.Json
+@using Softline_API.Controllers.Models
+@model Softline_API.Controllers.Models.GoalVM
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit your goal</h1>
+
+<div class="row form-box">
+    <form asp-action="Edit">
+        <input asp-for="ID" hidden class="form-control" />
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="form-group">
+            <div class="input-group mb-3">
+                <label asp-for="Name" class="input-group-text col-md-3 for="inputGroupSelect01"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger col-md-12"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="input-group mb-3">
+                <label asp-for="Description" class="input-group-text col-md-12" for="inputGroupSelect02"></label>
+                <textarea asp-for="Description" class="form-control form-text-area" multiple></textarea>
+                <span asp-validation-for="Description" class="text-danger col-md-12"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="input-group mb-3">
+                <label asp-for="Status.Status_name" class="input-group-text col-md-3" for="inputGroupSelect03"></label>
+                <select asp-for="Status_ID" class="form-select form-control">
+                    @foreach (var status in Model.Statuses)
+                    {
+                        if (status.Status_ID == Model.Status_ID)
+                        {
+                            <option selected value="@status.Status_ID">@status.Status_name</option>
+                        }
+                        else
+                        {
+                            <option value="@status.Status_ID">@status.Status_name</option>
+                        }
+                    }
+                </select>
+                <span asp-validation-for="Status" class="text-danger col-md-12"></span>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <input type="submit" value="Добавить" class="btn create-btn submit-create-button control-btn" />
+            <a asp-action="Index" class="btn delete-btn submit-create-button control-btn">Отмена</a>
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

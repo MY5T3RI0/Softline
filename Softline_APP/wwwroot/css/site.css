@@ -1,0 +1,212 @@
+﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+
+a.navbar-brand {
+  white-space: normal;
+  text-align: center;
+  word-break: break-all;
+}
+
+/* Provide sufficient contrast against white background */
+a {
+  color: #0366d6;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  font-size: 14px;
+}
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.border-top {
+  border-top: 1px solid #e5e5e5;
+}
+.border-bottom {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow {
+  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy {
+  font-size: 1rem;
+  line-height: inherit;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+    /* Margin bottom by footer height */
+    margin-bottom: 60px;
+    background-color: #1D0F0F;
+    color: #D4DBE2;
+}
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    white-space: nowrap;
+    line-height: 60px; /* Vertically center the text there */
+    background-color: #D4DBE2;
+    height: 5%;
+}
+
+.control-group{
+    margin-bottom: 20px;
+}
+
+.nav-item {
+    padding: 10px;
+}
+
+.nav-link:hover {
+    text-decoration: underline;
+}
+
+.create-btn {
+    box-shadow: 3px 3px 3px #7BFF81;
+    background-color: #D4DBE2;
+}
+
+.edit-btn {
+    box-shadow: 3px 3px 3px #D4DBFF;
+    background-color: #7B7C81;
+}
+
+.delete-btn {
+    box-shadow: 3px 3px 3px #FF586B;
+    background-color: #7B586B;
+}
+
+.control-btn {
+    border-radius: 5%;
+    padding: 10px;
+    background-color: #453C41;
+    color: #D4DBE2;
+}
+
+.control-btn:hover {
+    box-shadow: 0px 0px 0px #FFFFFF;
+    color: black !important;
+    text-decoration: none;
+}
+
+.create-btn:hover {
+    background-color: #7BFF81;
+}
+
+.edit-btn:hover {
+    background-color: #D4DBFF;
+}
+
+.delete-btn:hover {
+    background-color: #FF586B;
+}
+
+.table {
+    background-color: #453C41;
+    border-radius: 2%;
+    color: #D4DBE2;
+}
+
+.table-box {
+    background-color: #453C41;
+    min-height: 70vh;
+    border-bottom-left-radius: 2%;
+    border-bottom-right-radius: 2%;
+    border-style: solid;
+    border-width: 1px;
+    border-top: none;
+}
+
+.tab-head {
+    background-color: #7B586B;
+}
+
+.welcome{
+    margin-top: 30%;
+    font-size: 10Vh;
+}
+
+.navbar {
+    background-color: #D4DBE2;
+}
+
+.form-box {
+    padding: 50px 0 50px 0;
+    min-width: 100%;
+}
+
+form {
+    margin-left: auto;
+    margin-right: auto;
+    min-width: 90%;
+}
+
+.submit-create-button {
+    width: 40%;
+    margin: auto;
+}
+
+.form-text-area {
+    min-height: 20vh;
+}
+
+textarea, select, input:focus {
+    box-shadow: 0px 0px 0px #FFFFFF !important;
+}
+
+.form-control {
+    background-color: #453C41;
+    color: #D4DBE2;
+}
+
+.form-control:focus {
+    background-color: #453C41;
+    color: #D4DBE2;
+}
+
+.input-group-text {
+    background-color: #7B586B;
+    color: #D4DBE2;
+}
+
+.checked {
+    background-color: #7C767A !important;
+}
+
+.record {
+    min-height: 5%;
+    max-height: 10%;
+}
+
+.record:hover {
+    background-color: #6A6266;
+}
+
+.modal-content {
+    background-color: #1D0F0F;
+}
